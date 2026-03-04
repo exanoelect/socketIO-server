@@ -22,6 +22,12 @@ io.on("connection", (socket) => {
 
   socket.join(userId);
 
+  // socket.onAny((eventName, ...args) => {
+  //   console.log("Event masuk:", eventName);
+  //   console.log("Data:", args);
+  //   console.log("Dari socket:", socket.id);
+  // });
+
   NO_ACK_EVENTS.forEach((eventName) => {
     socket.on(eventName, (msg) => {
       console.log(`${eventName} command:`, msg, "from:", socket.userId);
