@@ -1,4 +1,4 @@
-export function formatDateTime() {
+export default function formatDateTime() {
     const d = new Date();
 
     const pad = (n) => String(n).padStart(2, "0");
