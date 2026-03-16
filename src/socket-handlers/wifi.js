@@ -17,18 +17,11 @@ export default function wifiHandlers(socket, io) {
         console.log("disconnect_wifi:", msg, "from:", socket.userId);
         io.emit("disconnect_wifi", msg);
     })    
-    socket.on("get_wifi_status", (msg) => {
-        console.log("get_wifi_status:", msg, "from:", socket.userId);
-        io.emit("get_wifi_status", msg);
-    }) 
     socket.on("wifi_scan_started", (msg) => {
         console.log("wifi_scan_started:", msg, "from:", socket.userId);
         io.emit("wifi_scan_started", msg);
     }) 
-    socket.on("get_wifi_status", (msg) => {
-        console.log("get_wifi_status:", msg, "from:", socket.userId);
-        io.emit("get_wifi_status", msg);
-    }) 
+  
     socket.on("wifi_status", (msg) => {
         console.log("wifi_status:", msg, "from:", socket.userId);
         io.emit("wifi_status", msg);
