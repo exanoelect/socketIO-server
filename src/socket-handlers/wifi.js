@@ -1,9 +1,8 @@
-import { z } from "zod";
-import { wifi_scan_started } from "../schema/message-schema";
+import { wifi_scan_started } from "../schema/message-schema.js";
 
 export default function wifiHandlers(socket, io) {
     //WIFI
-    socket.on("scan_wifi_stream", (msg) => {
+    socket.on("wifi_scan_started", (msg) => {
         try {
             console.log("scan_wifi_stream:", msg, "from:", socket.userId);
             const parsed =
@@ -45,7 +44,7 @@ export default function wifiHandlers(socket, io) {
         console.log("disconnect_wifi:", msg, "from:", socket.userId);
         io.emit("disconnect_wifi", msg);
     })
-    socket.on("wifi_scan_started", (msg) => {
+    socket.on("scan_wifi_stream", (msg) => {
         console.log("wifi_scan_started:", msg, "from:", socket.userId);
         io.emit("wifi_scan_started", msg);
     })
